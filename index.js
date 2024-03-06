@@ -11,6 +11,7 @@ const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
     origin: "http://localhost:5000/",
+    methods: ["GET", "POST"],
   },
 });
 // Store room information
