@@ -94,6 +94,12 @@ io.on("connection", (socket) => {
     //send move to other user
     socket.broadcast.emit("move", data);
   });
+
+  socket.on("surrender", (data) => {
+    console.log("surrender", data);
+    //send move to other user
+    socket.broadcast.emit("surrenderConfirm", data);
+  });
 });
 
 server.listen(3000, () => {
