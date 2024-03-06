@@ -3,7 +3,6 @@ const app = express();
 const http = require("http");
 const { Server } = require("socket.io");
 const cors = require("cors");
-require("dotenv").config();
 
 app.use(cors());
 
@@ -11,7 +10,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: process.env.HOST,
+    origin: ["http://localhost:5000/", "https://baghchal-beta.vercel.app/"],
     methods: ["GET", "POST"],
     credentials: true,
   },
